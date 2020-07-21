@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from './components/Accordion';
+import Search from './components/Search';
 
 //This is our list of question and answer pairs for this widget.
 const items = [
@@ -17,6 +18,13 @@ const items = [
     },
 ];
 
+const
+
 export default () => {
-    return <Accordion items={items}/>;
+    return (
+        <div>
+            <Search />
+        </div>
+
+    );
 };
