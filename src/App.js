@@ -18,8 +18,6 @@ const items = [
     },
 ];
 
-const
-
 export default () => {
     return (
         <div>
