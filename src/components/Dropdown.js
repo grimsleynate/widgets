@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 const Dropdown = ({ options, selected, onSelectedChange }) => {
     //This piece of state stores whether the dropdown menu is open or not.
@@ -7,7 +7,10 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 
     useEffect(() => {
         document.body.addEventListener('click', (event) => {
-            console.log(event.target);
+            if(ref.current.contains(event.target)) {
+                return;
+            }
+            
             setOpen(false);
         });
     }, []);
@@ -31,7 +34,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     });
 
     return (
-        <div className="ui form">
+        <div className="ui form" ref={ref}>
             <div className="field">
                 <label className="label">Select a Color</label>
                 <div 
