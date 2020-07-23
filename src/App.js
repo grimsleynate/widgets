@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Accordion from './components/Accordion';
 import Search from './components/Search';
+import Dropdown from './components/Dropdown';
 
-//This is our list of question and answer pairs for this widget.
+//This is our array of question and answer objects for the Accordion widget.
 const items = [
     {
         title: 'What is React?',
@@ -18,10 +19,33 @@ const items = [
     },
 ];
 
+//This is our array of color option objects for our dropdown
+const options = [
+    {
+        label: 'The Color Red',
+        value: 'red'
+    },
+    {
+        label: 'The Color Green',
+        value: 'green'
+    },
+    {
+        label: 'The Color Blue',
+        value: 'blue'
+    },
+];
+
+//This is the App component we are exporting
 export default () => {
+    const [selected, setSelected] = useState(options[0]);
+
     return (
         <div>
-            <Search />
+            <Dropdown 
+                options={options}
+                selected={selected}
+                onSelectedChange={setSelected}
+            />
         </div>
 
     );
