@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Dropdown = ({ options, selected, onSelectedChange }) => {
     //This piece of state stores whether the dropdown menu is open or not.
