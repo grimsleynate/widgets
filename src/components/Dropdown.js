@@ -3,6 +3,14 @@ import React, {useState, useEffect} from 'react';
 const Dropdown = ({ options, selected, onSelectedChange }) => {
     //This piece of state stores whether the dropdown menu is open or not.
     const [open, setOpen] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+        document.body.addEventListener('click', (event) => {
+            console.log(event.target);
+            setOpen(false);
+        });
+    }, []);
 
     const renderedOptions = options.map((option) => {
         //if the current option to map over is equal to the currently selected option,
