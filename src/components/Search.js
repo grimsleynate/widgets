@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const Search = (props) => {
+const Search = () => {
     const [term, setTerm] = useState('Search here');
     const [results, setResults] = useState([]);
 
