@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ options, selected, onSelectedChange, label }) => {
     //This piece of state stores whether the dropdown menu is open or not.
     const [open, setOpen] = useState(false);
     const ref = useRef();
@@ -41,7 +41,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
     return (
         <div className="ui form" ref={ref}>
             <div className="field">
-                <label className="label">Select a Color</label>
+                <label className="label">{label}</label>
                 <div 
                     //switches the open variable every time you click.
                     onClick={() => setOpen(!open)} 
