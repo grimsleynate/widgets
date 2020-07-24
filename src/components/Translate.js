@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import Dropdown from './Dropdown';
+import Convert from './Convert';
 
 //AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM
 
+//This is our list of language options for our Translate component
 const options = [
     {
         label: 'Afrikaans',
@@ -15,6 +17,22 @@ const options = [
     {
         label: 'Hindi',
         value: 'hi'
+    },
+    {
+        label: 'French',
+        value: 'fr'
+    },
+    {
+        label: 'Croatian',
+        value: 'hr'
+    },
+    {
+        label: 'German',
+        value: 'de'
+    },
+    {
+        label: 'Irish',
+        value: 'ga'
     },
 ]
 
@@ -36,6 +54,9 @@ const Translate = () => {
                 selected={language}
                 onSelectedChange={setLanguage}
             />
+            <hr />
+            <h3 className="ui header">Output</h3>
+            <Convert text={text} language={language}/>
         </div>
     );
 };
