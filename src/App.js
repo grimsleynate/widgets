@@ -3,6 +3,7 @@ import Accordion from './components/Accordion';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
+import Convert from './components/Convert';
 
 //This is our array of question and answer objects for the Accordion widget.
 const items = [
